@@ -1,0 +1,15 @@
+D:\Dubai1\TaskManagement\src\TaskManagement.Application\obj\Debug\net8.0\TaskManagement.Application.csproj.AssemblyReference.cache
+D:\Dubai1\TaskManagement\src\TaskManagement.Application\obj\Debug\net8.0\TaskManagement.Application.GeneratedMSBuildEditorConfig.editorconfig
+D:\Dubai1\TaskManagement\src\TaskManagement.Application\obj\Debug\net8.0\TaskManagement.Application.AssemblyInfoInputs.cache
+D:\Dubai1\TaskManagement\src\TaskManagement.Application\obj\Debug\net8.0\TaskManagement.Application.AssemblyInfo.cs
+D:\Dubai1\TaskManagement\src\TaskManagement.Application\obj\Debug\net8.0\TaskManagement.Application.csproj.CoreCompileInputs.cache
+D:\Dubai1\TaskManagement\src\TaskManagement.Application\bin\Debug\net8.0\TaskManagement.Application.deps.json
+D:\Dubai1\TaskManagement\src\TaskManagement.Application\bin\Debug\net8.0\TaskManagement.Application.dll
+D:\Dubai1\TaskManagement\src\TaskManagement.Application\bin\Debug\net8.0\TaskManagement.Application.pdb
+D:\Dubai1\TaskManagement\src\TaskManagement.Application\bin\Debug\net8.0\TaskManagement.Domain.dll
+D:\Dubai1\TaskManagement\src\TaskManagement.Application\bin\Debug\net8.0\TaskManagement.Domain.pdb
+D:\Dubai1\TaskManagement\src\TaskManagement.Application\obj\Debug\net8.0\TaskMana.B5C26166.Up2Date
+D:\Dubai1\TaskManagement\src\TaskManagement.Application\obj\Debug\net8.0\TaskManagement.Application.dll
+D:\Dubai1\TaskManagement\src\TaskManagement.Application\obj\Debug\net8.0\refint\TaskManagement.Application.dll
+D:\Dubai1\TaskManagement\src\TaskManagement.Application\obj\Debug\net8.0\TaskManagement.Application.pdb
+D:\Dubai1\TaskManagement\src\TaskManagement.Application\obj\Debug\net8.0\ref\TaskManagement.Application.dll
