@@ -10,6 +10,7 @@ using FluentValidation.AspNetCore;
 using TaskManagement.Application.Validators;
 using TaskManagement.Api.Middlewares;
 using Serilog;
+using Serilog.Events;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -23,12 +24,38 @@ builder.Logging.AddDebug();
 builder.Host.UseSerilog((context, config) =>
 {
     config
+        // Minimum log level
         .MinimumLevel.Information()
+
+        // Reduce ASP.NET Core internal logs
+        .MinimumLevel.Override(
+            "Microsoft",
+            LogEventLevel.Warning)
+
+        .MinimumLevel.Override(
+            "System",
+            LogEventLevel.Warning)
+
+        // Read properties from LogContext
         .Enrich.FromLogContext()
-        .WriteTo.Console()
+
+        // Console logging
+        .WriteTo.Console(
+            outputTemplate:
+            "[{Timestamp:HH:mm:ss} {Level:u3}] " +
+            "[CorrelationId: {CorrelationId}] " +
+            "[TenantId: {TenantId}] " +
+            "{Message:lj}{NewLine}{Exception}")
+
+        // File logging
         .WriteTo.File(
-            "logs/log-.txt",
-            rollingInterval: RollingInterval.Day);
+            path: "logs/log-.txt",
+            rollingInterval: RollingInterval.Day,
+            outputTemplate:
+            "[{Timestamp:yyyy-MM-dd HH:mm:ss} {Level:u3}] " +
+            "[CorrelationId: {CorrelationId}] " +
+            "[TenantId: {TenantId}] " +
+            "{Message:lj}{NewLine}{Exception}");
 });
 
 // Add services to the container.
