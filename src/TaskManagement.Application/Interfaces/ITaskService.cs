@@ -11,7 +11,7 @@ public interface ITaskService
 
     Task<TaskItem> CreateAsync(CreateTaskRequest request, string tenantId = "");
 
-    Task UpdateAsync(Guid id, CreateTaskRequest request, string tenantId = "");
+    Task UpdateAsync(Guid id, UpdateTaskRequest  request, string tenantId = "");
 
     Task DeleteAsync(Guid id, string tenantId = "");
 }

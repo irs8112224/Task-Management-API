@@ -152,9 +152,13 @@ D:\Dubai1\TaskManagement\tests\TaskManagement.Tests\obj\Debug\net8.0\TaskManagem
 D:\Dubai1\TaskManagement\tests\TaskManagement.Tests\obj\Debug\net8.0\TaskManagement.Tests.AssemblyInfoInputs.cache
 D:\Dubai1\TaskManagement\tests\TaskManagement.Tests\obj\Debug\net8.0\TaskManagement.Tests.AssemblyInfo.cs
 D:\Dubai1\TaskManagement\tests\TaskManagement.Tests\obj\Debug\net8.0\TaskManagement.Tests.csproj.CoreCompileInputs.cache
+D:\Dubai1\TaskManagement\tests\TaskManagement.Tests\obj\Debug\net8.0\TaskManagement.Tests.sourcelink.json
 D:\Dubai1\TaskManagement\tests\TaskManagement.Tests\obj\Debug\net8.0\TaskMana.C83F7B9B.Up2Date
 D:\Dubai1\TaskManagement\tests\TaskManagement.Tests\obj\Debug\net8.0\TaskManagement.Tests.dll
 D:\Dubai1\TaskManagement\tests\TaskManagement.Tests\obj\Debug\net8.0\refint\TaskManagement.Tests.dll
 D:\Dubai1\TaskManagement\tests\TaskManagement.Tests\obj\Debug\net8.0\TaskManagement.Tests.pdb
 D:\Dubai1\TaskManagement\tests\TaskManagement.Tests\obj\Debug\net8.0\TaskManagement.Tests.genruntimeconfig.cache
 D:\Dubai1\TaskManagement\tests\TaskManagement.Tests\obj\Debug\net8.0\ref\TaskManagement.Tests.dll
+D:\Dubai1\TaskManagement\tests\TaskManagement.Tests\bin\Debug\net8.0\Castle.Core.dll
+D:\Dubai1\TaskManagement\tests\TaskManagement.Tests\bin\Debug\net8.0\FluentAssertions.dll
+D:\Dubai1\TaskManagement\tests\TaskManagement.Tests\bin\Debug\net8.0\Moq.dll

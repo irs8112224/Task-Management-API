@@ -63,7 +63,7 @@ public class TasksController : ControllerBase
     }
 
     [HttpPut("{id:guid}")]
-    public async Task<IActionResult> Update(Guid id, CreateTaskRequest request)
+    public async Task<IActionResult> Update(Guid id, UpdateTaskRequest  request)
     {
         _logger.LogInformation("Updating task: {TaskId}", id);
         var tenantId = HttpContext.Items["X-Tenant-Id"]?.ToString() ?? string.Empty;

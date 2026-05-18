@@ -5,6 +5,7 @@ D:\Dubai1\TaskManagement\src\TaskManagement.Domain\obj\Debug\net8.0\TaskManageme
 D:\Dubai1\TaskManagement\src\TaskManagement.Domain\obj\Debug\net8.0\TaskManagement.Domain.AssemblyInfoInputs.cache
 D:\Dubai1\TaskManagement\src\TaskManagement.Domain\obj\Debug\net8.0\TaskManagement.Domain.AssemblyInfo.cs
 D:\Dubai1\TaskManagement\src\TaskManagement.Domain\obj\Debug\net8.0\TaskManagement.Domain.csproj.CoreCompileInputs.cache
+D:\Dubai1\TaskManagement\src\TaskManagement.Domain\obj\Debug\net8.0\TaskManagement.Domain.sourcelink.json
 D:\Dubai1\TaskManagement\src\TaskManagement.Domain\obj\Debug\net8.0\TaskManagement.Domain.dll
 D:\Dubai1\TaskManagement\src\TaskManagement.Domain\obj\Debug\net8.0\refint\TaskManagement.Domain.dll
 D:\Dubai1\TaskManagement\src\TaskManagement.Domain\obj\Debug\net8.0\TaskManagement.Domain.pdb

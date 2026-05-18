@@ -11,6 +11,7 @@ D:\Dubai1\TaskManagement\src\TaskManagement.Infrastructure\obj\Debug\net8.0\Task
 D:\Dubai1\TaskManagement\src\TaskManagement.Infrastructure\obj\Debug\net8.0\TaskManagement.Infrastructure.AssemblyInfoInputs.cache
 D:\Dubai1\TaskManagement\src\TaskManagement.Infrastructure\obj\Debug\net8.0\TaskManagement.Infrastructure.AssemblyInfo.cs
 D:\Dubai1\TaskManagement\src\TaskManagement.Infrastructure\obj\Debug\net8.0\TaskManagement.Infrastructure.csproj.CoreCompileInputs.cache
+D:\Dubai1\TaskManagement\src\TaskManagement.Infrastructure\obj\Debug\net8.0\TaskManagement.Infrastructure.sourcelink.json
 D:\Dubai1\TaskManagement\src\TaskManagement.Infrastructure\obj\Debug\net8.0\TaskMana.BCA0E1A6.Up2Date
 D:\Dubai1\TaskManagement\src\TaskManagement.Infrastructure\obj\Debug\net8.0\TaskManagement.Infrastructure.dll
 D:\Dubai1\TaskManagement\src\TaskManagement.Infrastructure\obj\Debug\net8.0\refint\TaskManagement.Infrastructure.dll

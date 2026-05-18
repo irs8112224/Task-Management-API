@@ -9,14 +9,17 @@ namespace TaskManagement.Application.Services;
 public class TaskService : ITaskService
 {
     private readonly ITaskRepository _repository;
-    private readonly IValidator<CreateTaskRequest> _validator;
+    private readonly IValidator<CreateTaskRequest> _createValidator;
+    private readonly IValidator<UpdateTaskRequest> _updateValidator;
 
     public TaskService(
         ITaskRepository repository,
-        IValidator<CreateTaskRequest> validator)
+        IValidator<CreateTaskRequest> createValidator,
+        IValidator<UpdateTaskRequest> updateValidator)
     {
         _repository = repository;
-        _validator = validator;
+        _createValidator = createValidator;
+        _updateValidator = updateValidator;
     }
 
     public async Task<List<TaskItem>> GetAllAsync(string tenantId = "")
@@ -24,14 +27,18 @@ public class TaskService : ITaskService
         return await _repository.GetAllAsync(tenantId);
     }
 
-    public async Task<TaskItem?> GetByIdAsync(Guid id,string tenantId = "")
+    public async Task<TaskItem?> GetByIdAsync(
+        Guid id,
+        string tenantId = "")
     {
         return await _repository.GetByIdAsync(id, tenantId);
     }
 
-    public async Task<TaskItem> CreateAsync(CreateTaskRequest request, string tenantId = "")
+    public async Task<TaskItem> CreateAsync(
+        CreateTaskRequest request,
+        string tenantId = "")
     {
-        await ValidateAsync(request);
+        await ValidateCreateAsync(request);
 
         var task = new TaskItem
         {
@@ -43,7 +50,8 @@ public class TaskService : ITaskService
             DueDate = request.DueDate,
             AssignedTo = request.AssignedTo,
             CreatedAt = DateTime.UtcNow,
-            TenantId = tenantId
+            TenantId = tenantId,
+            IsDeleted = false
         };
 
         await _repository.AddAsync(task);
@@ -53,9 +61,12 @@ public class TaskService : ITaskService
         return task;
     }
 
-    public async Task UpdateAsync(Guid id, CreateTaskRequest request, string tenantId = "")
+    public async Task UpdateAsync(
+        Guid id,
+        UpdateTaskRequest request,
+        string tenantId = "")
     {
-        await ValidateAsync(request);
+        await ValidateUpdateAsync(request);
 
         var task = await _repository.GetByIdAsync(id, tenantId);
 
@@ -72,12 +83,14 @@ public class TaskService : ITaskService
                 "Status cannot move from Completed to InProgress.");
         }
 
-        task.Title = request.Title;
-        task.Description = request.Description;
-        task.Status = request.Status;
-        task.Priority = request.Priority;
-        task.DueDate = request.DueDate;
-        task.AssignedTo = request.AssignedTo;
+        // Partial update support
+        task.Title = request.Title ?? task.Title;
+        task.Description = request.Description ?? task.Description;
+        task.Status = request.Status ?? task.Status;
+        task.Priority = request.Priority ?? task.Priority;
+        task.DueDate = request.DueDate ?? task.DueDate;
+        task.AssignedTo = request.AssignedTo ?? task.AssignedTo;
+
         task.UpdatedAt = DateTime.UtcNow;
 
         await _repository.UpdateAsync(task);
@@ -85,7 +98,9 @@ public class TaskService : ITaskService
         await _repository.SaveChangesAsync();
     }
 
-    public async Task DeleteAsync(Guid id, string tenantId = "")
+    public async Task DeleteAsync(
+        Guid id,
+        string tenantId = "")
     {
         var task = await _repository.GetByIdAsync(id, tenantId);
 
@@ -93,7 +108,8 @@ public class TaskService : ITaskService
             throw new Exception("Task not found.");
 
         if (task.Status == TaskItemStatus.Completed)
-            throw new Exception("Completed tasks cannot be deleted.");
+            throw new Exception(
+                "Completed tasks cannot be deleted.");
 
         task.IsDeleted = true;
         task.UpdatedAt = DateTime.UtcNow;
@@ -103,14 +119,29 @@ public class TaskService : ITaskService
         await _repository.SaveChangesAsync();
     }
 
-    private async Task ValidateAsync(CreateTaskRequest request)
+    private async Task ValidateCreateAsync(
+        CreateTaskRequest request)
     {
         var validationResult =
-            await _validator.ValidateAsync(request);
+            await _createValidator.ValidateAsync(request);
 
         if (!validationResult.IsValid)
         {
-            throw new ValidationException(validationResult.Errors);
+            throw new ValidationException(
+                validationResult.Errors);
+        }
+    }
+
+    private async Task ValidateUpdateAsync(
+        UpdateTaskRequest request)
+    {
+        var validationResult =
+            await _updateValidator.ValidateAsync(request);
+
+        if (!validationResult.IsValid)
+        {
+            throw new ValidationException(
+                validationResult.Errors);
         }
     }
 }
